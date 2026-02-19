@@ -16,6 +16,15 @@ Then commit and push all changes, and make sure all tests are passing.
 
 Then tag the new version of the collection, push the tag, and deploy the new collection version using the playbook in `scripts/deploy.yml`. That directory also contains the `galaxy.yml` template that will be used to build the collection metadata.
 
+Example (you get the Ansible-Galaxy token here: https://galaxy.ansible.com/ui/token/)
+``` 
+tag=0.1.0
+git tag $tag
+git push origin --tags
+source ~/venv_ansible/bin/activate
+ANSIBLE_GALAXY_TOKEN=X ansible-playbook scripts/deploy.yml --extra-vars "tag=$tag”
+```
+
 ## Credits
 
 The structure, and non-galaxy-specific content of this repo is greatly based on https://github.com/geerlingguy/ansible-collection-k8s
