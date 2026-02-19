@@ -3,11 +3,12 @@
   connection: local
   gather_facts: false
 
-  vars:
-    # This should be set via the command line at runtime.
-    tag: ''
-
   pre_tasks:
+    - name: Check tag is defined
+      ansible.builtin.assert:
+        that: 
+          - tag is defined
+          - tag != ''
     - name: Verify none of the git submodules need updates.
       command: >
         git submodule update --recursive --remote
