@@ -44,5 +44,5 @@
 
     - name: Publish the collection.
       command: >
-        ansible-galaxy collection publish ./vladvisan-galaxy-{{ tag }}.tar.gz
+        ansible-galaxy collection publish ./vladvisan-galaxy_collection-{{ tag }}.tar.gz
         chdir=../
