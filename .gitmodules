@@ -1,0 +1,21 @@
+[submodule "roles/galaxy"]
+	path = roles/galaxy
+	url = https://github.com/galaxyproject/ansible-galaxy
+[submodule "roles/nginx"]
+	path = roles/nginx
+	url = https://github.com/galaxyproject/ansible-nginx
+[submodule "roles/postgresql"]
+	path = roles/postgresql
+	url = https://github.com/galaxyproject/ansible-postgresql
+[submodule "roles/postgresql_objects"]
+	path = roles/postgresql_objects
+	url = https://github.com/galaxyproject/ansible-postgresql-objects
+[submodule "roles/miniconda"]
+	path = roles/miniconda
+	url = https://github.com/galaxyproject/ansible-miniconda
+[submodule "roles/certbot"]
+	path = roles/certbot
+	url = https://github.com/usegalaxy-eu/ansible-certbot
+[submodule "roles/tpv_auto_lint"]
+	path = roles/tpv_auto_lint
+	url = https://github.com/usegalaxy-eu/ansible-tpv-lint
