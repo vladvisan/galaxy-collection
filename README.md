@@ -16,6 +16,8 @@ Then commit and push all changes, and make sure all tests are passing.
 
 Then tag the new version of the collection, push the tag, and deploy the new collection version using the playbook in `scripts/deploy.yml`. That directory also contains the `galaxy.yml` template that will be used to build the collection metadata.
 
+**NB: if you want to publish using a different namespace and/or collection-name, modify scripts/deploy.yml and scripts/templates/galaxy.yml.j2**
+
 Example (you get the Ansible-Galaxy token here: https://galaxy.ansible.com/ui/token/)
 ``` 
 tag=0.1.0
