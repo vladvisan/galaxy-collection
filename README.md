@@ -22,8 +22,9 @@ tag=0.1.0
 git tag $tag
 git push origin --tags
 source ~/venv_ansible/bin/activate
-ANSIBLE_GALAXY_TOKEN=X ansible-playbook scripts/deploy.yml --extra-vars "tag=$tag”
+ANSIBLE_GALAXY_TOKEN=X ansible-playbook scripts/deploy.yml --extra-vars "tag=$tag"
 ```
+TODO: add a script for this?
 
 ## Credits
 
