@@ -28,6 +28,13 @@ ANSIBLE_GALAXY_TOKEN=X ansible-playbook scripts/deploy.yml --extra-vars "tag=$ta
 ```
 TODO: add a script for this?
 
+## Synchronising the github repo from our gitlab repo
+
+```
+git remote add origin2 git@github.com:vladvisan/galaxy-collection.git
+git push -u origin2 main
+```
+
 ## Credits
 
 The structure, and non-galaxy-specific content of this repo is greatly based on https://github.com/geerlingguy/ansible-collection-k8s
