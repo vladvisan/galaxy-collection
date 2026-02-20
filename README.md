@@ -34,11 +34,14 @@ ANSIBLE_GALAXY_TOKEN=X ansible-playbook scripts/deploy.yml --extra-vars "tag=$ta
 ```
 TODO: add a script for this?
 
+**NB: if you publish a correction using the same version number twice, sometimes the install of the collection won't work anymore with "ERROR! Failed to download collection tar from 'default' due to the following unforeseen error: Mismatch artifact hash with downloaded file" => just upgrade the version number and delete the old version from Ansible-Galaxy**
+
 ## Synchronising the github repo from our gitlab repo
 
 ```
 git remote add origin2 git@github.com:vladvisan/galaxy-collection.git
 git push -u origin2 main
+git push -u origin2 --tags
 ```
 
 ## Credits
