@@ -1,5 +1,9 @@
 # Galaxy Collection for Ansible
 
+## Collection location
+
+https://galaxy.ansible.com/ui/repo/published/vladvisan/galaxy_collection
+
 ## Development
 
 Currently, all roles (inside `roles/`) are Git submodules, and work on the roles themselves should take place in the upstream Role repository.
