@@ -1,5 +1,7 @@
 # Galaxy Collection for Ansible
 
+**NB: When cloning, use --recurse to have the submodules not be empty!**
+
 ## Collection location
 
 https://galaxy.ansible.com/ui/repo/published/vladvisan/galaxy_collection
