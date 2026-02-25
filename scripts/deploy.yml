@@ -42,7 +42,7 @@
     - ansible.builtin.file:
         src: ../../roles/galaxy/filter_plugins/uwsgi_yaml.py
         # Relative to the symlink
-        dest: plugins/filter/uwsgi_yaml.py
+        dest: ../plugins/filter/uwsgi_yaml.py
         state: link
     # Thanks to https://stackoverflow.com/a/78632620/32392989
     - name: Get list of files
@@ -80,4 +80,6 @@
         - ansible.builtin.command: git submodule foreach --recursive 'git checkout .'
           args:
             chdir: ..
-        - ansible.builtin.command: git checkout .
+        - ansible.builtin.file: 
+            path: ../plugins
+            state: absent
