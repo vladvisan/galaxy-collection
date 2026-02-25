@@ -33,6 +33,33 @@
         dest: ~/.ansible/galaxy_token
 
   tasks:
+    # TODO: auto-create plugins/filter/* automatically from roles/*/filter_plugins/*
+    #   Currently there is only one though
+    - ansible.builtin.file: 
+        path: ../plugins/filter
+        state: directory
+        recurse: true
+    - ansible.builtin.file:
+        src: ../../roles/galaxy/filter_plugins/uwsgi_yaml.py
+        # Relative to the symlink
+        dest: plugins/filter/uwsgi_yaml.py
+        state: link
+    # Thanks to https://stackoverflow.com/a/78632620/32392989
+    - name: Get list of files
+      ansible.builtin.find:
+        paths: ../roles
+        recurse: true
+      register: found_files
+
+    - name: Replace text in those files
+      ansible.builtin.replace:
+        path: '{{ item.path }}'
+        regexp: "\\| to_uwsgi_yaml"
+        replace: "| vladvisan.galaxy_collection.to_uwsgi_yaml"
+      loop: '{{ found_files.files }}'
+      # TODO: also loop on all the plugins (with the filter name, not the file name)
+      #   Currently only one though
+
     - name: Template out the galaxy.yml file.
       template:
         src: templates/galaxy.yml.j2
@@ -47,3 +74,10 @@
       command: >
         ansible-galaxy collection publish ./vladvisan-galaxy_collection-{{ tag }}.tar.gz
         chdir=../
+
+    - name: Put the repo + submodules back in the initial state
+      block:
+        - ansible.builtin.command: git submodule foreach --recursive 'git checkout .'
+          args:
+            chdir: ..
+        - ansible.builtin.command: git checkout .
