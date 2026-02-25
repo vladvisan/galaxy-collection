@@ -35,6 +35,7 @@
   tasks:
     # TODO: auto-create plugins/filter/* automatically from roles/*/filter_plugins/*
     #   Currently there is only one though
+    # TODO: case of plugin filters with intersecting name
     - ansible.builtin.file: 
         path: ../plugins/filter
         state: directory
@@ -45,9 +46,11 @@
         dest: ../plugins/filter/uwsgi_yaml.py
         state: link
     # Thanks to https://stackoverflow.com/a/78632620/32392989
+
+    # TODO: loop on the roles accordingly to the plugin filter origin
     - name: Get list of files
       ansible.builtin.find:
-        paths: ../roles
+        paths: ../roles/galaxy
         recurse: true
       register: found_files
 
