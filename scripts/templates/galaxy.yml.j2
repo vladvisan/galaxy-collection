@@ -6,7 +6,9 @@ version: "{{ tag }}"
 readme: README.md
 authors:
   - Vlad Visan
-dependencies: { }
+dependencies: { 
+  community.postgresql: "*", # Required by postgresql_objects
+}
 license:
   - MIT
 tags:
