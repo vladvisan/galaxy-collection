@@ -12,6 +12,9 @@ Currently, all roles (inside `roles/`) are Git submodules, and work on the roles
 
 They are, for now, only the ones mentioned in https://training.galaxyproject.org/training-material/topics/admin/tutorials/ansible-galaxy/tutorial.html and https://training.galaxyproject.org/training-material/topics/admin/tutorials/job-destinations/tutorial.html, and are also available as publishes roles at https://galaxy.ansible.com/ui/standalone/namespaces/2450 and https://galaxy.ansible.com/ui/standalone/namespaces/10048
 
+Also some we use locally:
+* https://github.com/stephdewit/ansible-nvm
+
 ### Pushing a new version
 
 Before tagging a new version, make sure all the git submodules are up to date:

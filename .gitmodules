@@ -19,3 +19,6 @@
 [submodule "roles/tpv_auto_lint"]
 	path = roles/tpv_auto_lint
 	url = https://github.com/usegalaxy-eu/ansible-tpv-lint
+[submodule "roles/nvm"]
+	path = roles/nvm
+	url = https://github.com/stephdewit/ansible-nvm
